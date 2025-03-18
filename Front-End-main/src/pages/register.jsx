@@ -5,8 +5,8 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { auth, db } from "../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
-import BgLogin from "../assets/Background/bgLogin3.png";
-import Logo from "../assets/icon/logo.jpg";
+import BgLogin from "../assets/Background/pllr.jpg";
+import Logo from "../assets/logo/MahakamStoreLogo.png";
 import IconModalError from "../assets/icon/iconModal/iconModalError.png";
 import IconModalSuccess from "../assets/icon/iconModal/iconModalSucces.png";
 
@@ -68,14 +68,10 @@ function Register() {
             <img
               src={Logo}
               alt="Logo"
-              className="w-44 h-44 sm:w-40 sm:h-40 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
+              className="w-150 h-150 sm:w-150 sm:h-150 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
-            <h2 className="relative z-50 text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary-100 mt-4">
-              PixelStore
-            </h2>
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl  text-primary-100">
-              PixelStore, Sumber Inspirasi footage menarik di website kami untuk
-              Project Anda!
+              "Dunia Belanja Anda"
             </p>
           </div>
         </div>
@@ -89,8 +85,7 @@ function Register() {
             </div>
             <div className="relative w-full mx-auto ">
               <h2 className=" ml-[12px] sm:ml-[90px] md:ml-[110px] lg:ml-[80px] xl:ml-[100px] sm:w-2/3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-xl text-center text-nuetral-90 mb-10">
-                Ayo Selesaikan Pendaftaran dan Segera bergabung Ke Tomb Oati
-                Market
+              Selamat Datang di Mahakam Store, Dunia Belanja Anda.
               </h2>
             </div>
 
