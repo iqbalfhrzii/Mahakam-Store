@@ -15,7 +15,7 @@ import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
 import IconCart from "../../assets/icon/iconHeader/iconCart.svg";
 import IconMyAsset from "../../assets/icon/iconHeader/iconMyasset.svg";
-import logoWeb from "../../assets/logo/logoWeb.png";
+import MahakamStoreLogo from "../../assets/logo/MahakamStoreLogo.png";
 
 function HeaderWebUser() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -105,13 +105,13 @@ function HeaderWebUser() {
       <section className="navbar h-28 fixed z-30 top-0 left-0 pt-0 text-neutral-10  font-poppins font-semibold dark:text-primary-100 bg-primary-100 dark:bg-neutral-20 gap-2">
         <div className="flex gap-2 items-center">
           <img
-            src={logoWeb}
+            src={MahakamStoreLogo}
             alt="logo"
             className="w-12 sm:w-16 md:w-18 lg:w-20 xl:w-20 2xl:w-24 h-auto"
           />
-          <h2 className="text-[8px] sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl hidden sm:block">
-            PixelStore
-          </h2>
+          <h2 className="text-[1px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl hidden sm:block">
+            Mahakam Store
+         </h2>
         </div>
 
         <div className="fixed top-0 right-0 p-4 z-50">
@@ -126,7 +126,7 @@ function HeaderWebUser() {
                 className="w-[24px] h-[24px] ml-4 sm:-ml-1 md:-ml-1 lg:-ml-1 xl:-ml-1 2xl:-ml-1"
               />
               <label className="ml-2  sm:-ml-4 md:-ml-4 lg:-ml-4 xl:-ml-4 2xl:-ml-4 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] xl:text-[8px] 2xl:text-[8px]">
-                My asset
+                Produk Saya
               </label>
             </Link>
 
@@ -143,7 +143,7 @@ function HeaderWebUser() {
                   {cartCount}
                 </span>
               )} */}
-              <label>Cart</label>
+              <label>Keranjang</label>
             </Link>
           </div>
 
