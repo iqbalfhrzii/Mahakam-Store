@@ -1,9 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { collection, query, where, getDocs } from "firebase/firestore";
-import { auth, db } from "../firebase/firebaseConfig";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { useUserContext } from "../contexts/UserContext";
 import BgLogin from "../assets/Background/pllr.jpg";
@@ -23,6 +20,7 @@ function Login() {
   const { saveUserRole } = useUserContext();
 
   useEffect(() => {
+    // Ambil email yang diingat dari localStorage jika ada
     const storedEmail = localStorage.getItem("rememberedEmail");
     if (storedEmail) {
       setLoginEmail(storedEmail);
@@ -40,81 +38,41 @@ function Login() {
     }
   };
 
-  const checkUserRole = async (email) => {
-    const usersRef = collection(db, "users");
-    const q = query(usersRef, where("email", "==", email));
-    const querySnapshot = await getDocs(q);
-
-    if (!querySnapshot.empty) {
-      const userDoc = querySnapshot.docs[0];
-      return userDoc.data().role;
-    }
-    return null;
-  };
-
-  const loginAction = async (e) => {
+  const loginAction = (e) => {
     e.preventDefault();
     setErrorModal("");
     setLoading(true);
 
-    try {
-      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      const user = userCredential.user;
+    // Ambil data users dari localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-      const response = await fetch("http://localhost:3000/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: loginEmail,
-          password: loginPassword,
-        }),
-      });
+    // Cari user berdasarkan email dan password
+    const existingUser = users.find(
+      (user) => user.email === loginEmail && user.password === loginPassword
+    );
 
-      const data = await response.json();
+    if (existingUser) {
+      // Simpan user ke session
+      localStorage.setItem("authUser", JSON.stringify(existingUser));
 
-      if (response.ok) {
-        localStorage.setItem("authToken", data.token);
-        if (rememberMe) {
-          localStorage.setItem("rememberedEmail", loginEmail);
-        } else {
-          localStorage.removeItem("rememberedEmail");
-        }
-
-        const adminRole = data.user.role;
-        if (adminRole === "superadmin") {
-          setModalMessage("Login sebagai Superadmin berhasil!");
-          saveUserRole("superadmin");
-          setTimeout(() => {
-            setModalMessage(null);
-            navigate("/dashboard");
-          }, 2000);
-        } else if (adminRole === "admin") {
-          setModalMessage("Login sebagai Admin berhasil!");
-          saveUserRole("admin");
-          setTimeout(() => {
-            setModalMessage(null);
-            navigate("/dashboard");
-          }, 2000);
-        } else {
-          setModalMessage("Login berhasil!");
-          saveUserRole("user");
-          setTimeout(() => {
-            setModalMessage(null);
-            navigate("/");
-          }, 2000);
-        }
+      if (rememberMe) {
+        localStorage.setItem("rememberedEmail", loginEmail);
       } else {
-        setErrorModal(data.error || "Login gagal. Silakan coba lagi.");
+        localStorage.removeItem("rememberedEmail");
       }
-    } catch (error) {
-      setErrorModal("Email atau password tidak valid. Silakan coba lagi.");
-    } finally {
-      setLoading(false);
-    }
-  };
 
+      setModalMessage("Login berhasil!");
+      setTimeout(() => {
+        setModalMessage(null);
+        navigate("/");
+      }, 2000);
+    } else {
+      setErrorModal("Email atau password tidak valid. Silakan coba lagi.");
+    }
+
+    setLoading(false);
+  };
+  
   return (
     <div className="bg-neutral-20 min-h-screen h-full flex justify-center items-center font-poppins">
       <div className="flex flex-col lg:flex-row w-full max-w-[1920px] lg:h-[768px] h-auto min-h-screen">

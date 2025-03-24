@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-import { auth, db } from "../firebase/firebaseConfig";
-import { addDoc, collection } from "firebase/firestore";
+
 import BgLogin from "../assets/Background/pllr.jpg";
 import Logo from "../assets/logo/MahakamStoreLogo.png";
 import IconModalError from "../assets/icon/iconModal/iconModalError.png";
@@ -22,37 +21,31 @@ function Register() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const registerAction = async (e) => {
+  const registerAction = (e) => {
     e.preventDefault();
     setModalMessage("");
     setErrorModal("");
     setLoading(true);
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
 
-      const user = userCredential.user;
-      await addDoc(collection(db, "users"), {
-        uid: user.uid,
-        firstName,
-        lastName,
-        username,
-        email,
-        createdAt: new Date(),
-      });
+    // Simulasi penyimpanan user ke localStorage
+    setTimeout(() => {
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const existingUser = users.find((user) => user.email === email);
 
-      setModalMessage("Berhasil Melakukan Registrasi");
-      // Alihkan ke halaman login setelah 5 detik
-      setTimeout(() => {
-        navigate("/login");
-      }, 5000);
-    } catch (error) {
-      setErrorModal("Registration failed. Please try again.");
-      setLoading(false);
-    }
+      if (existingUser) {
+        setErrorModal("Email sudah terdaftar.");
+        setLoading(false);
+      } else {
+        const newUser = { firstName, lastName, username, email, password };
+        users.push(newUser);
+        localStorage.setItem("users", JSON.stringify(users));
+
+        setModalMessage("Berhasil melakukan registrasi");
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
+      }
+    }, 1000);
   };
 
   return (
