@@ -2,7 +2,7 @@
  
 import React, { Children } from "react";
 import SidebarNavPanduan from './SidebarNavP'
-import Logo from "../../../assets/logo/logoWeb.png";
+import MahakamStoreLogo from "../../../assets/logo/MahakamStoreLogo.png";
 
 const Sidebar = () => {
   const navigationItems = [
@@ -27,20 +27,20 @@ const Sidebar = () => {
         },
         {
           href: "/panduan-jual-asset",
-          label: "Jual Asset",
+          label: "Jual Produk",
          
         },
 
         {
           href: "/panduan-edit-asset",
-          label: "Edit Asset",
+          label: "Edit Produk",
            
-	},
-	{
-	href: "/",
-	label: "Back to Home",
-		 
-	},
+  },
+  {
+  href: "/",
+  label: "Kembali ke Home",
+     
+  },
       ],
     },
     
@@ -49,9 +49,9 @@ const Sidebar = () => {
   return (
     <nav className="space-y-4 overflow-y-auto min-h-screen h-[1000vh] p-4 bg-neutral-100 dark:bg-neutral-10 font-poppins  ">
       <div className="h-[80px] flex items-center justify-center gap-4">
-        <img alt="Logo" src={Logo} className="w-28 h-28 rounded-full" />
+        <img alt="Logo" src={MahakamStoreLogo} className="w-28 h-28 rounded-full" />
         <h1 className="text-xl text-center font-bold text-neutral-20 dark:text-primary-100 py-8">
-          PixelStore
+          Mahakam Store
         </h1>
       </div>
       {navigationItems.map((section, sectionIndex) => (
