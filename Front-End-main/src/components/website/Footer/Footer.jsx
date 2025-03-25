@@ -41,14 +41,14 @@ const Footer = () => {
           {/* Navigation Links */}
           <nav className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-primary-100 mb-3">
-              Asset Navigation
+              Produk Kami
             </h3>
             {[
-              { href: "/asset-video", text: "Asset Video" },
-              { href: "/asset-image", text: "Asset Image" },
-              { href: "/asset-dataset", text: "Asset Dataset" },
-              { href: "/asset-game", text: "Asset Game" },
-              { href: "/asset-gratis", text: "Asset Gratis" },
+              { href: "/asset-video", text: "Fashion" },
+              { href: "/asset-image", text: "Elektronik" },
+              { href: "/asset-dataset", text: "Kesehatan" },
+              { href: "/asset-game", text: "Furniture" },
+              { href: "/asset-gratis", text: "Pendidikan" },
             ].map((link) => (
               <a
                 key={link.href}
