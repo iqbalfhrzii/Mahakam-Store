@@ -123,10 +123,10 @@ function HeaderWebUser() {
               <img
                 src={IconMyAsset}
                 alt="icon my asset"
-                className="w-[24px] h-[24px] ml-4 sm:-ml-1 md:-ml-1 lg:-ml-1 xl:-ml-1 2xl:-ml-1"
+                className="w-[26px] h-[26px] ml-7 sm:-ml-7 md:-ml-7 lg:-ml-7 xl:-ml-7 2xl:-ml-7"
               />
-              <label className="ml-2  sm:-ml-4 md:-ml-4 lg:-ml-4 xl:-ml-4 2xl:-ml-4 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] xl:text-[8px] 2xl:text-[8px]">
-                Produk Saya
+              <label className="ml-2  sm:-ml-11 md:-ml-11 lg:-ml-11 xl:-ml-11 2xl:-ml-11 text-[10px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]">
+                My Product 
               </label>
             </Link>
 
@@ -136,14 +136,14 @@ function HeaderWebUser() {
               <img
                 src={IconCart}
                 alt="icon cart"
-                className="w-[24px] h-[24px]"
+                className="w-[24px] h-[24px] -ml-6"
               />
               {/* {cartCount > 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {cartCount}
                 </span>
               )} */}
-              <label>Keranjang</label>
+              <label className="-ml-6">Keranjang</label>
             </Link>
           </div>
 
