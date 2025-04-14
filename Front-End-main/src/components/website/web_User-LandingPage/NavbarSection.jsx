@@ -249,7 +249,7 @@ const NavbarSection = () => {
             </div>
           </div>
 
-          {/* Jual Asset */}
+          {/* Jual Barang */}
           <div className="flex flex-col space-y-4 sm:flex-row mb-6 text-left sm:text-right mx-2 -ml-1 sm:ml-6 md:ml-0 lg:ml-auto mt-0 sm:mt-1 md:mt-6 lg:mt-8">
             <span className="hidden sm:flex items-center text-[24px] mt-4 ml-4">
               |
@@ -261,7 +261,7 @@ const NavbarSection = () => {
                   role="button"
                   className="btn text-neutral-10 dark:text-primary-100 flex items-center bg-transparent border-none font-normal hover:bg-transparent text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px]">
                   <div className="flex">
-                    Jual Asset
+                    Jual Barang
                     <svg
                       className="w-4 h-4 ml-2"
                       xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +285,7 @@ const NavbarSection = () => {
                       to={isLoggedIn ? "/dashboard" : "/login"}
                       onClick={handleClick}
                       className="hover:bg-secondary-40 hover:rounded-md hover:text-primary-100 text-[10px] sm:text-[10px] md:text-[12px] lg:text-[12px] xl:text-[14px] h-10 p-3 transition-all duration-200">
-                      Mulai Jual Asset
+                      Mulai Jual Barang
                     </Link>
                     <Link
                       to="/riwayat-transaksi"

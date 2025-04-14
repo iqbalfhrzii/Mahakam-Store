@@ -15,7 +15,7 @@ import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
 import IconCart from "../../assets/icon/iconHeader/iconCart.svg";
 import IconMyAsset from "../../assets/icon/iconHeader/iconMyasset.svg";
-import logoWeb from "../../assets/logo/logoWeb.png";
+import MahakamStoreLogo from "../../assets/logo/MahakamStoreLogo.png";
 
 function HeaderWebUser() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -105,18 +105,18 @@ function HeaderWebUser() {
       <section className="navbar h-28 fixed z-30 top-0 left-0 pt-0 text-neutral-10  font-poppins font-semibold dark:text-primary-100 bg-primary-100 dark:bg-neutral-20 gap-2">
         <div className="flex gap-2 items-center">
           <img
-            src={logoWeb}
+            src={MahakamStoreLogo}
             alt="logo"
             className="w-12 sm:w-16 md:w-18 lg:w-20 xl:w-20 2xl:w-24 h-auto"
           />
-          <h2 className="text-[8px] sm:text-sm md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl hidden sm:block">
-            PixelStore
-          </h2>
+        <h2 className="text-[10px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl block">
+  Mahakam Store
+</h2>
         </div>
 
-        <div className="fixed top-0 right-0 p-4 z-50">
+        <div className="absolute top-0 right-0 p-4 z-20">
           {/* cart an my asset */}
-          <div className="z-50  gap-14 sm:gap-1 md:gap-1 lg:gap-1 xl:gap-1 2xl:gap-2 flex justify-center items-center">
+          <div className="z-20  gap-14 sm:gap-1 md:gap-1 lg:gap-1 xl:gap-1 2xl:gap-2 flex justify-center items-center">
             <Link
               to="/my-asset"
               className="z-20  w-[45px] sm:w-[45px] md:w-[44px] lg:w-[44px] xl:w-[60px] 2xl:w-[34px] h-[20px] sm:h-[28px] md:h-[28px] lg:h-[28px] xl:h-[28px] 2xl:h[28px] -ml-[30px] sm:ml-1 md:ml-1 lg:ml-0 xl:ml-0 2xl:ml-2 gap-1 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] xl:text-[8px] 2xl:text-[8px]">

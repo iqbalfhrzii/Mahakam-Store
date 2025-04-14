@@ -2,7 +2,7 @@
  
 import React, { Children } from "react";
 import SidebarNavPanduan from './SidebarNavP'
-import Logo from "../../../assets/logo/logoWeb.png";
+import Logo from "../../../assets/logo/MahakamStoreLogo.png";
 
 const Sidebar = () => {
   const navigationItems = [
@@ -27,7 +27,7 @@ const Sidebar = () => {
         },
         {
           href: "/panduan-jual-asset",
-          label: "Jual Asset",
+          label: "Jual Barang",
          
         },
 

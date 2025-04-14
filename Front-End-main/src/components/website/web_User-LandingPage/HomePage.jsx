@@ -17,7 +17,6 @@ import HeaderNav from "../../headerNavBreadcrumbs/HeaderWebUser";
 import NavbarSection from "../web_User-LandingPage/NavbarSection";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import CustomImage from "../../../assets/assetmanage/Iconrarzip.svg";
-import BannerBG from "../../../assets/assetWeb/BannerBG.png";
 import IconDownload from "../../../assets/icon/iconHeader/iconMyasset.svg";
 import IconDollar from "../../../assets/assetWeb/iconDollarLight.svg";
 import IconCart from "../../../assets/assetWeb/iconCart.svg";
@@ -565,13 +564,7 @@ export function HomePage() {
           <NavbarSection />
         </div>
       </div>
-      <div className="bg-primary-100 dark:bg-neutral-20 fixed z-10">
-        <img
-          className="w-[300vh] mt-[130px] sm:mt-[90px] md:mt-[90px] lg:mt-[120px] xl:mt-[90px] 2xl:mt-[100px]"
-          src={BannerBG}
-          alt="Banner"
-        />
-      </div>
+
 
       <div className="absolute ">
         <div className="bg-primary-100 dark:bg-neutral-20 text-neutral-10 dark:text-neutral-90 sm:bg-none md:bg-none lg:bg-none xl:bg-none 2xl:bg-none fixed  left-[50%] sm:left-[40%] md:left-[45%] lg:left-[50%] xl:left-[44%] 2xl:left-[50%] transform -translate-x-1/2 z-20 sm:z-40 md:z-40 lg:z-40 xl:z-40 2xl:z-40  flex justify-center top-[253px] sm:top-[20px] md:top-[20px] lg:top-[20px] xl:top-[20px] 2xl:top-[20px] w-full sm:w-[200px] md:w-[200px] lg:w-[100px] xl:w-[600px] 2xl:w-[1000px] -mt-16 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">

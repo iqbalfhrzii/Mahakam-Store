@@ -11,7 +11,7 @@ import IconUserDark from "../../assets/icon/iconDarkMode&LigthMode/iconUserDark.
 import IconUserLight from "../../assets/icon/iconDarkMode&LigthMode/iconUserLight.svg";
 import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.svg";
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
-import logoWeb from "../../assets/logo/logoWeb.png";
+import logoWeb from "../../assets/logo/MahakamStoreLogo.png";
 
 function HeaderNav() {
   const { darkMode, toggleDarkMode } = useTheme();
