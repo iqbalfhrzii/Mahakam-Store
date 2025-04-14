@@ -49,7 +49,7 @@ export function AssetDataset() {
       const apiBaseUrl =
         window.location.hostname === "localhost"
           ? "http://localhost:3000"
-          : "https://pixelstore-be.up.railway.app";
+          : "https://MahakamStore-be.up.railway.app";
       const proxyUrl = `${apiBaseUrl}/api/proxy-file?url=${encodeURIComponent(
         firebaseFileUrl
       )}`;

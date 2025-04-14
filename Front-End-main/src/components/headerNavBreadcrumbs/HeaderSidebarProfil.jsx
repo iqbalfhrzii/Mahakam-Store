@@ -13,7 +13,7 @@ import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
 import IconStoreLight from "../../assets/icon/iconHeaderDashboard/iconStoreLight.svg";
 import IconStoreDark from "../../assets/icon/iconHeaderDashboard/iconStoreDark.svg";
-import iconPixelstore from "../../assets/logo/logoLogin.png";
+import iconMahakamStore from "../../assets/logo/logoLogin.png";
 
 function HeaderSidebarProfil() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -83,8 +83,8 @@ function HeaderSidebarProfil() {
       <div className="flex-1">
         <div className="inline-flex items-center p-2">
           <img
-            src={iconPixelstore}
-            alt="iconPixelstore"
+            src={iconMahakamStore}
+            alt="iconMahakamStore"
             className="w-20 h-20 mx-auto"
           />
         </div>

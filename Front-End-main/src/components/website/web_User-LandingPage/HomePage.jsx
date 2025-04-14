@@ -512,17 +512,32 @@ export function HomePage() {
       await setDoc(buyAssetsRef, {
         userId: currentUserId,
         assetId: selectedasset.id,
-        name: selectedasset.audioName || selectedasset.asset2DName || selectedasset.asset3DName || selectedasset.datasetName || selectedasset.imageName || selectedasset.videoName || "Nama Tidak Tersedia",
+        name:
+          selectedasset.audioName ||
+          selectedasset.asset2DName ||
+          selectedasset.asset3DName ||
+          selectedasset.datasetName ||
+          selectedasset.imageName ||
+          selectedasset.videoName ||
+          "Nama Tidak Tersedia",
         description: selectedasset.description,
         price: selectedasset.price,
         category: selectedasset.category,
         assetOwnerID: selectedasset.userId,
-        image: selectedasset.uploadUrlAudio || selectedasset.datasetFile
-          || selectedasset.asset2DFile || selectedasset.asset3DFile || selectedasset.uploadUrlImage || selectedasset.uploadUrlVideo
-          || "File Tidak Tersedia",
-        thumbnailGame: selectedasset.audioThumbnail || selectedasset.datasetThumbnail
-          || selectedasset.asset2DThumbnail
-          || selectedasset.asset3DThumbnail || "File Tidak Tersedia",
+        image:
+          selectedasset.uploadUrlAudio ||
+          selectedasset.datasetFile ||
+          selectedasset.asset2DFile ||
+          selectedasset.asset3DFile ||
+          selectedasset.uploadUrlImage ||
+          selectedasset.uploadUrlVideo ||
+          "File Tidak Tersedia",
+        thumbnailGame:
+          selectedasset.audioThumbnail ||
+          selectedasset.datasetThumbnail ||
+          selectedasset.asset2DThumbnail ||
+          selectedasset.asset3DThumbnail ||
+          "File Tidak Tersedia",
       });
 
       alert("Asset berhasil ditambahkan ke My Asset!");
@@ -531,7 +546,6 @@ export function HomePage() {
       alert("Terjadi kesalahan saat menyimpan aset. Silakan coba lagi.");
     }
   };
-
 
   const [currentIndexModal, setCurrentIndexModal] = useState(0);
 
@@ -544,10 +558,14 @@ export function HomePage() {
   const handleNext = () => {
     setCurrentIndexModal((prevIndex) => {
       if (
-        (selectedasset.asset2DThumbnail && prevIndex < selectedasset.asset2DThumbnail.length - 1) ||
-        (selectedasset.asset3DThumbnail && prevIndex < selectedasset.asset3DThumbnail.length - 1) ||
-        (selectedasset.audioThumbnail && prevIndex < selectedasset.audioThumbnail.length - 1) ||
-        (selectedasset.datasetThumbnail && prevIndex < selectedasset.datasetThumbnail.length - 1)
+        (selectedasset.asset2DThumbnail &&
+          prevIndex < selectedasset.asset2DThumbnail.length - 1) ||
+        (selectedasset.asset3DThumbnail &&
+          prevIndex < selectedasset.asset3DThumbnail.length - 1) ||
+        (selectedasset.audioThumbnail &&
+          prevIndex < selectedasset.audioThumbnail.length - 1) ||
+        (selectedasset.datasetThumbnail &&
+          prevIndex < selectedasset.datasetThumbnail.length - 1)
       ) {
         return prevIndex + 1;
       }
@@ -567,17 +585,17 @@ export function HomePage() {
       </div>
       <div className="bg-primary-100 dark:bg-neutral-20 z-10 flex justify-center items-center img.ml-5">
         <img
-          className="w-[1500px] mt-[100px] sm:mt-[90px] md:mt-[50px] lg:mt-[100px] xl:mt-[120px] 2xl:mt-[50px]"
+          className="w-[1500px] mt-[10px] sm:mt-[30px] md:mt-[10px] lg:mt-[30px] xl:mt-[40px] 2xl:mt-[0px]"
           src={BannerBG}
           alt="Banner"
         />
       </div>
-F
-      <div className="absolute ">
-        <div className="bg-primary-100 dark:bg-neutral-20 text-neutral-10 dark:text-neutral-90 sm:bg-none md:bg-none lg:bg-none xl:bg-none 2xl:bg-none fixed  left-[50%] sm:left-[40%] md:left-[45%] lg:left-[50%] xl:left-[44%] 2xl:left-[50%] transform -translate-x-1/2 z-20 sm:z-40 md:z-40 lg:z-40 xl:z-40 2xl:z-40  flex justify-center top-[253px] sm:top-[20px] md:top-[20px] lg:top-[20px] xl:top-[20px] 2xl:top-[20px] w-full sm:w-[200px] md:w-[200px] lg:w-[100px] xl:w-[600px] 2xl:w-[1000px] -mt-16 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
-          <div className="justify-center">
+
+      <div className="absolute">
+        <div className="bg-primary-100 dark:bg-neutral-20 text-neutral-10 dark:text-neutral-90 sm:bg-none md:bg-none lg:bg-none xl:bg-none 2xl:bg-none fixed  left-[50%] sm:left-[40%] md:left-[45%] lg:left-[50%] xl:left-[44%] 2xl:left-[50%] transform -translate-x-1/2 z-20 sm:z-40 md:z-40 lg:z-40 xl:z-40 2xl:z-40  flex justify-center top-[253px] sm:top-[20px] md:top-[20px] lg:top-[20px] xl:top-[20px] 2xl:top-[20px] w-full sm:w-[200px] md:w-[200px] lg:w-[100px] xl:w-[600px] 2xl:w-[1000px] -mt-0 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
+          <div className="flex justify-center my-[-40px] z-40">
             <form
-              className=" mx-auto  w-[570px] sm:w-[200px] md:w-[400px] lg:w-[500px] xl:w-[700px] 2xl:w-[1000px]"
+              className="mx-auto w-[570px] sm:w-[200px] md:w-[400px] lg:w-[500px] xl:w-[700px] 2xl:w-[1000px]"
               onSubmit={(e) => e.preventDefault()}
             >
               <div className="relative">
@@ -662,11 +680,12 @@ F
         )}
       </div>
 
-
       <div className="relative  flex items-center justify-center">
         <div className="text-center">
           {searchResults.length === 0 && searchTerm && (
-            <p className="text-black text-[20px] mt-64 lg:mt-96">No assets found</p>
+            <p className="text-black text-[20px] mt-64 lg:mt-96">
+              No assets found
+            </p>
           )}
         </div>
       </div>
@@ -823,135 +842,141 @@ F
             {/* Bagian Gambar */}
             <div
               onClick={() => openModal(selectedasset)}
-              className="flex flex-col items-center justify-center w-full">
+              className="flex flex-col items-center justify-center w-full"
+            >
               <div className="w-full h-auto max-h-[300px] relative overflow-hidden rounded-md flex items-center justify-center p-4">
-                {
-                  selectedasset.uploadUrlVideo ? (
-                    <video
-                      src={selectedasset.uploadUrlVideo}
-                      alt="Asset Video"
-                      className="w-full h-full object-cover"
-                      controls
-                      controlsList="nodownload"
-                      onContextMenu={(e) => e.preventDefault()}
-                    />
-                  ) : Array.isArray(selectedasset.asset2DThumbnail) && selectedasset.asset2DThumbnail.length > 0 ? (
-                    <img
-                      src={
-                        selectedasset.asset2DThumbnail[currentIndexModal] ||
-                        selectedasset.asset2DFile ||
-                        CustomImage
-                      }
-                      alt={`Thumbnail ${currentIndexModal + 1}`}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = CustomImage;
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="h-full max-h-[400px] w-full p-8 max-w-[400px object-fill rounded-t-[10px] border-none"
-                    />
-                  ) : Array.isArray(selectedasset.asset3DThumbnail) && selectedasset.asset3DThumbnail.length > 0 ? (
-                    <img
-                      src={
-                        selectedasset.asset3DThumbnail[currentIndexModal] ||
-                        selectedasset.asset3DFile ||
-                        CustomImage
-                      }
-                      alt={`Thumbnail ${currentIndexModal + 1}`}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = CustomImage;
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
-                    />
-                  ) : Array.isArray(selectedasset.audioThumbnail) && selectedasset.audioThumbnail.length > 0 ? (
-                    <img
-                      src={
-                        selectedasset.audioThumbnail[currentIndexModal] ||
-                        selectedasset.asset3DFile ||
-                        CustomImage
-                      }
-                      alt={`Thumbnail ${currentIndexModal + 1}`}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = CustomImage;
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
-                    />
-                  ) : Array.isArray(selectedasset.datasetThumbnail) && selectedasset.datasetThumbnail.length > 0 ? (
-                    <img
-                      src={
-                        selectedasset.datasetThumbnail[currentIndexModal] ||
-                        selectedasset.asset3DFile ||
-                        CustomImage
-                      }
-                      alt={`Thumbnail ${currentIndexModal + 1}`}
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = CustomImage;
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
-                    />
-                  ) : (
-                    <img
-                      src={
-                        selectedasset.image ||
-                        selectedasset.uploadUrlImage ||
-                        selectedasset.uploadUrlAudio ||
-                        selectedasset.datasetImage ||
-                        selectedasset.assetAudiosImage ||
-                        selectedasset.asset2DImage ||
-                        selectedasset.asset3DImage ||
-                        (selectedasset.video ? CustomImage : null) ||
-                        selectedasset.datasetThumbnail ||
-                        selectedasset.asset3DThumbnail ||
-                        selectedasset.audioThumbnail ||
-                        CustomImage
-                      }
-                      alt="Asset Image"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = CustomImage;
-                      }}
-                      onContextMenu={(e) => e.preventDefault()}
-                      draggable={false}
-                      onDragStart={(e) => e.preventDefault()}
-                      className="w-full h-full object-cover"
-                    />
-                  )
-                }
+                {selectedasset.uploadUrlVideo ? (
+                  <video
+                    src={selectedasset.uploadUrlVideo}
+                    alt="Asset Video"
+                    className="w-full h-full object-cover"
+                    controls
+                    controlsList="nodownload"
+                    onContextMenu={(e) => e.preventDefault()}
+                  />
+                ) : Array.isArray(selectedasset.asset2DThumbnail) &&
+                  selectedasset.asset2DThumbnail.length > 0 ? (
+                  <img
+                    src={
+                      selectedasset.asset2DThumbnail[currentIndexModal] ||
+                      selectedasset.asset2DFile ||
+                      CustomImage
+                    }
+                    alt={`Thumbnail ${currentIndexModal + 1}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = CustomImage;
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="h-full max-h-[400px] w-full p-8 max-w-[400px object-fill rounded-t-[10px] border-none"
+                  />
+                ) : Array.isArray(selectedasset.asset3DThumbnail) &&
+                  selectedasset.asset3DThumbnail.length > 0 ? (
+                  <img
+                    src={
+                      selectedasset.asset3DThumbnail[currentIndexModal] ||
+                      selectedasset.asset3DFile ||
+                      CustomImage
+                    }
+                    alt={`Thumbnail ${currentIndexModal + 1}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = CustomImage;
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
+                  />
+                ) : Array.isArray(selectedasset.audioThumbnail) &&
+                  selectedasset.audioThumbnail.length > 0 ? (
+                  <img
+                    src={
+                      selectedasset.audioThumbnail[currentIndexModal] ||
+                      selectedasset.asset3DFile ||
+                      CustomImage
+                    }
+                    alt={`Thumbnail ${currentIndexModal + 1}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = CustomImage;
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
+                  />
+                ) : Array.isArray(selectedasset.datasetThumbnail) &&
+                  selectedasset.datasetThumbnail.length > 0 ? (
+                  <img
+                    src={
+                      selectedasset.datasetThumbnail[currentIndexModal] ||
+                      selectedasset.asset3DFile ||
+                      CustomImage
+                    }
+                    alt={`Thumbnail ${currentIndexModal + 1}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = CustomImage;
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="h-full max-h-[400px] w-full max-w-[400px object-fill rounded-t-[10px] border-none"
+                  />
+                ) : (
+                  <img
+                    src={
+                      selectedasset.image ||
+                      selectedasset.uploadUrlImage ||
+                      selectedasset.uploadUrlAudio ||
+                      selectedasset.datasetImage ||
+                      selectedasset.assetAudiosImage ||
+                      selectedasset.asset2DImage ||
+                      selectedasset.asset3DImage ||
+                      (selectedasset.video ? CustomImage : null) ||
+                      selectedasset.datasetThumbnail ||
+                      selectedasset.asset3DThumbnail ||
+                      selectedasset.audioThumbnail ||
+                      CustomImage
+                    }
+                    alt="Asset Image"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = CustomImage;
+                    }}
+                    onContextMenu={(e) => e.preventDefault()}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover"
+                  />
+                )}
 
-                {(Array.isArray(selectedasset.asset2DThumbnail) && selectedasset.asset2DThumbnail.length > 1) ||
-                  (Array.isArray(selectedasset.asset3DThumbnail) && selectedasset.asset3DThumbnail.length > 1) ||
-                  (Array.isArray(selectedasset.datasetThumbnail) && selectedasset.datasetThumbnail.length > 1) ? (
+                {(Array.isArray(selectedasset.asset2DThumbnail) &&
+                  selectedasset.asset2DThumbnail.length > 1) ||
+                (Array.isArray(selectedasset.asset3DThumbnail) &&
+                  selectedasset.asset3DThumbnail.length > 1) ||
+                (Array.isArray(selectedasset.datasetThumbnail) &&
+                  selectedasset.datasetThumbnail.length > 1) ? (
                   <>
                     <button
                       onClick={handlePrevious}
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent text-secondary-40 text-[40px] sm:text-[50px] rounded-full p-4 sm:p-6">
+                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent text-secondary-40 text-[40px] sm:text-[50px] rounded-full p-4 sm:p-6"
+                    >
                       &#8592;
                     </button>
                     <button
                       onClick={handleNext}
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent text-secondary-40 text-[40px] sm:text-[50px] rounded-full p-4 sm:p-6">
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent text-secondary-40 text-[40px] sm:text-[50px] rounded-full p-4 sm:p-6"
+                    >
                       &#8594;
                     </button>
                   </>
-
                 ) : null}
               </div>
             </div>
-
 
             <div className="w-full mt-4 text-center sm:text-left max-h-[300px] sm:max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
               <p className="text-lg sm:text-xl text-neutral-10 font-bold dark:text-primary-100 text-start">
@@ -984,10 +1009,11 @@ F
                   <>
                     <button
                       onClick={() => handleAddToCart(selectedasset)}
-                      className={`flex p-2 text-center items-center justify-center bg-neutral-60 w-full h-10 rounded-md ${purchasedAssets.has(selectedasset.id)
-                        ? "bg-gray-400 pointer-events-none"
-                        : "bg-neutral-60"
-                        }`}
+                      className={`flex p-2 text-center items-center justify-center bg-neutral-60 w-full h-10 rounded-md ${
+                        purchasedAssets.has(selectedasset.id)
+                          ? "bg-gray-400 pointer-events-none"
+                          : "bg-neutral-60"
+                      }`}
                       disabled={purchasedAssets.has(selectedasset.id)}
                     >
                       <img
@@ -1008,21 +1034,20 @@ F
                       alt="Download Icon"
                       className="w-6 h-6 mr-2"
                     />
-                    <p>Simpan Ke MyAsset Anda!</p> {/* Change the text to indicate purchase */}
+                    <p>Simpan Ke MyAsset Anda!</p>{" "}
+                    {/* Change the text to indicate purchase */}
                   </button>
-
                 )}
               </div>
             </div>
           </div>
         </div>
-      )
-      }
+      )}
 
       <div className="mt-[700px]">
         <Footer />
       </div>
-    </div >
+    </div>
   );
 }
 

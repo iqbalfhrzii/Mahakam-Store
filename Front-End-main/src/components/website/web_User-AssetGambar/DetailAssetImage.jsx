@@ -64,12 +64,12 @@ function DetailAssetImage() {
           <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center mb-4 md:mb-0">
               <img
-                src="PixelStore.png"
-                alt="PixelStore Logo"
+                src="MahakamStore.png"
+                alt="MahakamStore Logo"
                 className="h-16 w-16 md:h-20 md:w-20 mr-2"
               />
               <h1 className="text-xl font-bold text-gray-800 dark:text-gray-100">
-                PixelStore
+                MahakamStore
               </h1>
             </div>
 
@@ -296,7 +296,7 @@ function DetailAssetImage() {
               </Link>
             </div>
             <p className="text-xs md:text-sm text-center">
-              Copyright &copy; 2024 All rights reserved by PixelStore
+              Copyright &copy; 2024 All rights reserved by MahakamStore
             </p>
           </div>
         </footer>

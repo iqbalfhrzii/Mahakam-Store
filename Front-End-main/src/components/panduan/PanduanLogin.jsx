@@ -66,7 +66,7 @@ function PanduanLogin() {
             <div className="mb-16">
               <p className="mb-4">
                 2. Setelah itu anda akan diarakan ke halaman Log in, Isi data
-                berdasarkan data akun yang anda daftarkan sebelumnya di PixelStore,
+                berdasarkan data akun yang anda daftarkan sebelumnya di MahakamStore,
                 atau jika belum punya akun klik daftar.
               </p>
               <Zoom>

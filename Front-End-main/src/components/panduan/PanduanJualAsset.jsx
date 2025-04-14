@@ -49,7 +49,7 @@ function JualAsset() {
           <div className="container mx-auto px-1 py-2">
             <div className="mb-16">
               <p className="mb-4">
-                1. Pastikan anda sudah mendaftar akun di PixelStore dan Login
+                1. Pastikan anda sudah mendaftar akun di MahakamStore dan Login
                 menggunakan akun yang terdaftar.
               </p>
             </div>
@@ -85,7 +85,7 @@ function JualAsset() {
             <div className="mb-16">
               <p className="mb-4">
                 4. Pada Halaman ini anda dapat memilih konten apa yang anda akan
-                Upload ke PixelStore dan yang akan anda jual nantinya.
+                Upload ke MahakamStore dan yang akan anda jual nantinya.
               </p>
             </div>
 

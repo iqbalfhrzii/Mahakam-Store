@@ -73,10 +73,10 @@ function LupaPassword() {
               className="w-44 h-44 sm:w-40 sm:h-40 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
             <h2 className="relative z-50 text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary-100 mt-4">
-              PixelStore
+              MahakamStore
             </h2>
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl text-primary-100">
-              PixelStore, Sumber Inspirasi footage menarik di website kami untuk
+              MahakamStore, Sumber Inspirasi footage menarik di website kami untuk
               Project Anda!
             </p>
           </div>

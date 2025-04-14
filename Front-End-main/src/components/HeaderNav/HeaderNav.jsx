@@ -11,7 +11,7 @@ import IconUserDark from "../../assets/icon/iconDarkMode&LigthMode/iconUserDark.
 import IconUserLight from "../../assets/icon/iconDarkMode&LigthMode/iconUserLight.svg";
 import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.svg";
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
-import logoWeb from "../../assets/logo/MahakamStoreLogo.png";
+import logoWeb from "../../assets/logo/logoWeb.png";
 
 function HeaderNav() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -88,7 +88,7 @@ function HeaderNav() {
         <div className="flex-1 gap-2 w-full">
           <img src={logoWeb} alt="logo" className="w-20 h-20" />
           <h2 className="text-[10px] sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
-            PixelStore
+            MahakamStore
           </h2>
         </div>
 

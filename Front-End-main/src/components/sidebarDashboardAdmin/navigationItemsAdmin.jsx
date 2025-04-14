@@ -226,7 +226,7 @@ const Sidebar = () => {
       <div className="h-[60px] flex items-center justify-center gap-4">
         <img alt="Logo" src={Logo} className="w-24 h-24 rounded-full" />
         <h1 className="text-xl text-center font-bold text-neutral-20 dark:text-primary-100 py-8">
-          PixelStore
+          MahakamStore
         </h1>
       </div>
       {navigationItems.map((section, sectionIndex) => (
