@@ -17,7 +17,7 @@ import HeaderNav from "../../headerNavBreadcrumbs/HeaderWebUser";
 import NavbarSection from "../web_User-LandingPage/NavbarSection";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import CustomImage from "../../../assets/assetmanage/Iconrarzip.svg";
-import BannerBG from "../../../assets/assetWeb/pele.png";
+import BannerBG from "../../../assets/assetWeb/pele.jpg";
 import IconDownload from "../../../assets/icon/iconHeader/iconMyasset.svg";
 import IconDollar from "../../../assets/assetWeb/iconDollarLight.svg";
 import IconCart from "../../../assets/assetWeb/iconCart.svg";
