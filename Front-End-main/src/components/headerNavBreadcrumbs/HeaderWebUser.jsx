@@ -109,15 +109,9 @@ function HeaderWebUser() {
             alt="logo"
             className="w-12 sm:w-16 md:w-18 lg:w-20 xl:w-20 2xl:w-24 h-auto"
           />
-<<<<<<< HEAD
-        <h2 className="text-[10px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl block">
-  Mahakam Store
-</h2>
-=======
-          <h2 className="text-[1px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl hidden sm:block">
+          <h2 className="text-[1px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl hidden">
             Mahakam Store
          </h2>
->>>>>>> 3e09c3466a9aeddf09daef48f50b0b59670a5e91
         </div>
 
         <div className="absolute top-0 right-0 p-4 z-20">

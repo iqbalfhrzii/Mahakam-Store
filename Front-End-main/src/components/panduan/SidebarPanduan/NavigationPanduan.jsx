@@ -2,11 +2,7 @@
  
 import React, { Children } from "react";
 import SidebarNavPanduan from './SidebarNavP'
-<<<<<<< HEAD
-import Logo from "../../../assets/logo/MahakamStoreLogo.png";
-=======
 import MahakamStoreLogo from "../../../assets/logo/MahakamStoreLogo.png";
->>>>>>> 3e09c3466a9aeddf09daef48f50b0b59670a5e91
 
 const Sidebar = () => {
   const navigationItems = [
@@ -31,11 +27,7 @@ const Sidebar = () => {
         },
         {
           href: "/panduan-jual-asset",
-<<<<<<< HEAD
-          label: "Jual Barang",
-=======
           label: "Jual Produk",
->>>>>>> 3e09c3466a9aeddf09daef48f50b0b59670a5e91
          
         },
 
