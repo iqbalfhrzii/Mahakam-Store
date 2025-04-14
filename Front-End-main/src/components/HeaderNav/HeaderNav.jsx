@@ -88,7 +88,7 @@ function HeaderNav() {
         <div className="flex-1 gap-2 w-full">
           <img src={logoWeb} alt="logo" className="w-20 h-20" />
           <h2 className="text-[10px] sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
-            PixelStore
+            MahakamStore
           </h2>
         </div>
 
