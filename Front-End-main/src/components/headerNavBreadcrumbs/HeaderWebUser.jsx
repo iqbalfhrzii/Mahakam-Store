@@ -109,9 +109,15 @@ function HeaderWebUser() {
             alt="logo"
             className="w-12 sm:w-16 md:w-18 lg:w-20 xl:w-20 2xl:w-24 h-auto"
           />
+<<<<<<< HEAD
         <h2 className="text-[10px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl block">
   Mahakam Store
 </h2>
+=======
+          <h2 className="text-[1px] sm:text-base md:text-lg lg:text-lg xl:text-xl 2xl:text-2xl hidden sm:block">
+            Mahakam Store
+         </h2>
+>>>>>>> 3e09c3466a9aeddf09daef48f50b0b59670a5e91
         </div>
 
         <div className="absolute top-0 right-0 p-4 z-20">
@@ -123,10 +129,10 @@ function HeaderWebUser() {
               <img
                 src={IconMyAsset}
                 alt="icon my asset"
-                className="w-[24px] h-[24px] ml-4 sm:-ml-1 md:-ml-1 lg:-ml-1 xl:-ml-1 2xl:-ml-1"
+                className="w-[26px] h-[26px] ml-7 sm:-ml-7 md:-ml-7 lg:-ml-7 xl:-ml-7 2xl:-ml-7"
               />
-              <label className="ml-2  sm:-ml-4 md:-ml-4 lg:-ml-4 xl:-ml-4 2xl:-ml-4 text-[8px] sm:text-[8px] md:text-[8px] lg:text-[8px] xl:text-[8px] 2xl:text-[8px]">
-                My asset
+              <label className="ml-2  sm:-ml-11 md:-ml-11 lg:-ml-11 xl:-ml-11 2xl:-ml-11 text-[10px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]">
+                My Product 
               </label>
             </Link>
 
@@ -136,14 +142,14 @@ function HeaderWebUser() {
               <img
                 src={IconCart}
                 alt="icon cart"
-                className="w-[24px] h-[24px]"
+                className="w-[24px] h-[24px] -ml-6"
               />
               {/* {cartCount > 0 && (
                 <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
                   {cartCount}
                 </span>
               )} */}
-              <label>Cart</label>
+              <label className="-ml-6">Keranjang</label>
             </Link>
           </div>
 

@@ -59,7 +59,7 @@ const NavbarSection = () => {
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
                 <div>
-                  <p>Telusuri Semua</p>
+                  <p>Telusuri Produk</p>
                 </div>
                 <span className="hidden sm:flex items-center text-[24px] ml-4 mt-0 sm:-mt-2 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
                   |
@@ -82,7 +82,7 @@ const NavbarSection = () => {
             {/* Asset Video */}
             <div className="relative group">
               <Link
-                to="/asset-video"
+                to="/fashion"
                 className={`relative inline-block text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] 
                 w-full text-start rounded-md h-10 p-2
                 ${isLinkActive("/asset-video")
@@ -93,7 +93,7 @@ const NavbarSection = () => {
                 hover:bg-secondary-40 sm:hover:bg-secondary-40 md:hover:bg-secondary-40 lg:hover:bg-transparent xl:hover:bg-transparent 2xl:hover:bg-transparent 
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
-                Asset Video
+                Fashion
                 <span className="absolute bottom-0 left-0 right-0 mx-auto h-[2px] ">
                   <span
                     className={`absolute bottom-0 left-1/2 w-0 h-[3px] bg-secondary-40 transition-all duration-500 ease-in-out 
@@ -115,7 +115,7 @@ const NavbarSection = () => {
             {/* Asset Gambar */}
             <div className="relative group">
               <Link
-                to="/asset-image"
+                to="/elektronik"
                 className={`relative inline-block text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px]
               w-full text-start rounded-md h-10 p-2
               ${isLinkActive("/asset-image")
@@ -126,7 +126,7 @@ const NavbarSection = () => {
                 hover:bg-secondary-40 sm:hover:bg-secondary-40 md:hover:bg-secondary-40 lg:hover:bg-transparent xl:hover:bg-transparent 2xl:hover:bg-transparent 
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
-                Asset Image
+                Elektronik
                 <span className="absolute bottom-0 left-0 right-0 mx-auto h-[2px] ">
                   <span
                     className={`absolute bottom-0 left-1/2 w-0 h-[3px] bg-secondary-40 transition-all duration-500 ease-in-out 
@@ -148,7 +148,7 @@ const NavbarSection = () => {
             {/* Asset Dataset */}
             <div className="relative group">
               <Link
-                to="/asset-dataset"
+                to="/kesehatan"
                 className={`relative inline-block text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] 
             w-full text-start rounded-md h-10 p-2
             ${isLinkActive("/asset-dataset")
@@ -159,7 +159,7 @@ const NavbarSection = () => {
                 hover:bg-secondary-40 sm:hover:bg-secondary-40 md:hover:bg-secondary-40 lg:hover:bg-transparent xl:hover:bg-transparent 2xl:hover:bg-transparent 
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
-                Asset Dataset
+                Kesehatan
                 <span className="absolute bottom-0 left-0 right-0 mx-auto h-[2px] ">
                   <span
                     className={`absolute bottom-0 left-1/2 w-0 h-[3px] bg-secondary-40 transition-all duration-500 ease-in-out 
@@ -181,7 +181,7 @@ const NavbarSection = () => {
             {/* Asset Game */}
             <div className="relative group ">
               <Link
-                to="/asset-game"
+                to="/properti"
                 className={`relative inline-block text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] 
             w-full text-start rounded-md h-10 p-2
             ${isLinkActive("/asset-game")
@@ -192,7 +192,7 @@ const NavbarSection = () => {
                 hover:bg-secondary-40 sm:hover:bg-secondary-40 md:hover:bg-secondary-40 lg:hover:bg-transparent xl:hover:bg-transparent 2xl:hover:bg-transparent 
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
-                Asset Game
+                Properti
                 <span className="absolute bottom-0 left-0 right-0 mx-auto h-[2px] ">
                   <span
                     className={`absolute bottom-0 left-1/2 w-0 h-[3px] bg-secondary-40 transition-all duration-500 ease-in-out 
@@ -216,7 +216,7 @@ const NavbarSection = () => {
               <nav className=" dark:bg-neutral-20  text-primary-100 dark:text-primary-100 h-full relative">
                 <div className="flex flex-col space-y-4 ">
                   <Link
-                    to="/asset-gratis"
+                    to="/pendidikan"
                     className={`relative inline-block text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px] 2xl:text-[16px] 
           w-full text-start rounded-md h-10 p-2
           ${isLinkActive("/asset-gratis")
@@ -227,7 +227,7 @@ const NavbarSection = () => {
                 hover:bg-secondary-40 sm:hover:bg-secondary-40 md:hover:bg-secondary-40 lg:hover:bg-transparent xl:hover:bg-transparent 2xl:hover:bg-transparent 
                 dark:hover:bg-secondary-40 sm:dark:hover:bg-secondary-40 md:dark:hover:bg-secondary-40 lg:dark:hover:bg-transparent xl:dark:hover:bg-transparent 2xl:dark:hover:bg-transparent 
                 text-neutral-10 group-hover:no-underline`}>
-                    Asset Gratis
+                    Pendidikan
                     <span className="absolute bottom-0 left-0 right-0 mx-auto h-[2px] ">
                       <span
                         className={`absolute bottom-0 left-1/2 w-0 h-[3px] bg-secondary-40 transition-all duration-500 ease-in-out 
@@ -261,7 +261,7 @@ const NavbarSection = () => {
                   role="button"
                   className="btn text-neutral-10 dark:text-primary-100 flex items-center bg-transparent border-none font-normal hover:bg-transparent text-[12px] sm:text-[10px] md:text-[12px] lg:text-[16px] xl:text-[16px]">
                   <div className="flex">
-                    Jual Barang
+                    Jual produk
                     <svg
                       className="w-4 h-4 ml-2"
                       xmlns="http://www.w3.org/2000/svg"
@@ -285,7 +285,7 @@ const NavbarSection = () => {
                       to={isLoggedIn ? "/dashboard" : "/login"}
                       onClick={handleClick}
                       className="hover:bg-secondary-40 hover:rounded-md hover:text-primary-100 text-[10px] sm:text-[10px] md:text-[12px] lg:text-[12px] xl:text-[14px] h-10 p-3 transition-all duration-200">
-                      Mulai Jual Barang
+                      Mulai Jual 
                     </Link>
                     <Link
                       to="/riwayat-transaksi"
