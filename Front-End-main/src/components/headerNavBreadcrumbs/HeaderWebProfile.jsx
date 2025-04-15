@@ -96,7 +96,7 @@ function HeaderWebUser() {
         </div>
 
         <div className="fixed top-0 right-0 p-4 z-10">
-          {/* cart an my asset */}
+          {/* cart an Riwayat */}
           <div className="gap-14 sm:gap-1 md:gap-8 lg:gap-8 xl:gap-2 2xl:gap-10 flex justify-center items-center">
             <Link
               to="/my-asset"
@@ -104,10 +104,10 @@ function HeaderWebUser() {
             >
               <img
                 src={IconMyAsset}
-                alt="icon my asset"
+                alt="icon Riwayat"
                 className="w-[24px] h-[24px]"
               />
-              <label className="-ml-4">My asset</label>
+              <label className="-ml-4">Riwayat</label>
             </Link>
 
             <Link

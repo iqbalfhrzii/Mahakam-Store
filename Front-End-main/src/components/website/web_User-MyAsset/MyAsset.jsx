@@ -140,11 +140,11 @@ export function MyAsset() {
         asset.datasetFile && asset.datasetFile !== "tidak ada"
           ? asset.datasetFile
           : asset.uploadUrlAudio ||
-          asset.uploadUrlVideo ||
-          asset.uploadUrlImage ||
-          asset.asset2DFile ||
-          asset.asset3DFile ||
-          asset.image;
+            asset.uploadUrlVideo ||
+            asset.uploadUrlImage ||
+            asset.asset2DFile ||
+            asset.asset3DFile ||
+            asset.image;
 
       console.log("url : ", fileUrl);
 
@@ -152,13 +152,13 @@ export function MyAsset() {
         asset.datasetFile && asset.datasetFile !== "tidak ada"
           ? asset.datasetName || "dataset.zip"
           : asset.audioName ||
-          asset.videoName ||
-          asset.imageName ||
-          asset.asset2DName ||
-          asset.asset3DName ||
-          asset.datasetName ||
-          asset.name ||
-          "asset.zip";
+            asset.videoName ||
+            asset.imageName ||
+            asset.asset2DName ||
+            asset.asset3DName ||
+            asset.datasetName ||
+            asset.name ||
+            "asset.zip";
 
       const type = asset.uploadUrlAudio
         ? "audio"
@@ -294,7 +294,7 @@ export function MyAsset() {
 
       <div className="w-full p-12 mx-auto">
         <h1 className="text-2xl font-semibold text-neutral-10 dark:text-primary-100  pt-[100px] -ml-10">
-          My Asset
+          Riwayat
         </h1>
       </div>
       <div className="pt-2 w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14 min-h-screen ">
@@ -464,7 +464,7 @@ export function MyAsset() {
             <div className="flex flex-col items-center justify-center w-full">
               <div className="w-full h-[200px] sm:h-[200px] md:h-[200px] lg:h-[250px] xl:h-[300px] 2xl:h-[350px] aspect-[16/9] sm:aspect-[4/3] relative mt-4">
                 {Array.isArray(selectedasset.thumbnailGame) &&
-                  selectedasset.thumbnailGame[0] ? (
+                selectedasset.thumbnailGame[0] ? (
                   <img
                     src={selectedasset.thumbnailGame[0]}
                     alt="Asset Thumbnail"

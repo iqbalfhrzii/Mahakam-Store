@@ -504,7 +504,7 @@ export function HomePage() {
     const buyAssetsSnapshot = await getDoc(buyAssetsRef);
 
     if (buyAssetsSnapshot.exists()) {
-      alert("Asset sudah ada dalam My Asset.");
+      alert("Asset sudah ada dalam Riwayat.");
       return;
     }
 
@@ -540,7 +540,7 @@ export function HomePage() {
           "File Tidak Tersedia",
       });
 
-      alert("Asset berhasil ditambahkan ke My Asset!");
+      alert("Asset berhasil ditambahkan ke Riwayat!");
     } catch (error) {
       console.error("Error adding to buyAssets: ", error);
       alert("Terjadi kesalahan saat menyimpan aset. Silakan coba lagi.");
