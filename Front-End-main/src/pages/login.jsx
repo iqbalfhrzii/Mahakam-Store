@@ -72,7 +72,7 @@ function Login() {
 
     setLoading(false);
   };
-  
+
   return (
     <div className="bg-neutral-20 min-h-screen h-full flex justify-center items-center font-poppins">
       <div className="flex flex-col lg:flex-row w-full max-w-[1920px] lg:h-[768px] h-auto min-h-screen">
@@ -88,10 +88,9 @@ function Login() {
               alt="Logo"
               className="w-150 h-150 sm:w-150 sm:h-150 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
-            
-      
+
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl  text-primary-100">
-              "Dunia Belanja Anda"
+              Dunia Belanja Anda
             </p>
           </div>
         </div>
@@ -147,7 +146,8 @@ function Login() {
                   <button
                     type="button"
                     className="absolute  inset-y-0 right-0 pr-4 flex items-center text-gray-600"
-                    onClick={() => setShowPassword(!showPassword)}>
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
                     {showPassword ? (
                       <EyeSlashIcon className="h-6 w-6 text-gray-500" />
                     ) : (
@@ -172,7 +172,8 @@ function Login() {
 
                   <Link
                     to="/lupa-password"
-                    className="relative inline-block  text-[10px] sm:text-[12px] md:text-[16px] lg:text-[16px]  xl:text-[16px] text-primary-40 hover:text-error-1 group">
+                    className="relative inline-block  text-[10px] sm:text-[12px] md:text-[16px] lg:text-[16px]  xl:text-[16px] text-primary-40 hover:text-error-1 group"
+                  >
                     Lupa Password ?
                     <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-primary-40 transition-all duration-1000 transform group-hover:left-0 group-hover:w-1/2"></span>
                     <span className="absolute bottom-0 right-1/2 w-0 h-[2px] bg-primary-40 transition-all duration-1000 transform group-hover:right-0 group-hover:w-1/2"></span>
@@ -182,9 +183,11 @@ function Login() {
               <div className="form-control mt-6">
                 <button
                   type="submit"
-                  className={`rounded-md w-full h-[40px] sm:h-[48px] md:h-[48px] lg:h-[48px] xl:h-[48px] 2xl:h-[48px] text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px]  xl:text-[18px] mt-4   ${loading ? "bg-secondary-40 " : "bg-secondary-40  "
-                    } text-primary-100`}
-                  disabled={loading}>
+                  className={`rounded-md w-full h-[40px] sm:h-[48px] md:h-[48px] lg:h-[48px] xl:h-[48px] 2xl:h-[48px] text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px]  xl:text-[18px] mt-4   ${
+                    loading ? "bg-secondary-40 " : "bg-secondary-40  "
+                  } text-primary-100`}
+                  disabled={loading}
+                >
                   {loading ? (
                     <span className="loading loading-infinity loading-lg"></span>
                   ) : (
@@ -201,7 +204,8 @@ function Login() {
 
               <Link
                 to="/register"
-                className="relative ml-4 inline-block text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[18px] text-primary-40 hover:text-error-1 group">
+                className="relative ml-4 inline-block text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-[18px] text-primary-40 hover:text-error-1 group"
+              >
                 Daftar ?
                 <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-primary-40 transition-all duration-1000 transform group-hover:left-0 group-hover:w-1/2"></span>
                 <span className="absolute bottom-0 right-1/2 w-0 h-[2px] bg-primary-40 transition-all duration-1000 transform group-hover:right-0 group-hover:w-1/2"></span>
@@ -222,7 +226,8 @@ function Login() {
                 <div className="modal-action flex justify-center">
                   <button
                     onClick={() => setErrorModal(null)}
-                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100">
+                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100"
+                  >
                     OK
                   </button>
                 </div>
@@ -244,7 +249,8 @@ function Login() {
                 <div className="modal-action flex justify-center">
                   <button
                     onClick={() => setModalMessage(null)}
-                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100">
+                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100"
+                  >
                     OK
                   </button>
                 </div>
