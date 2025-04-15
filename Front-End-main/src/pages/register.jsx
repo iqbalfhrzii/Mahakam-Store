@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-
-import BgLogin from "../assets/Background/pllr.jpg";
-import Logo from "../assets/logo/MahakamStoreLogo.png";
+import { auth, db } from "../firebase/firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
+import BgLogin from "../assets/Background/bgLogin3.png";
+import Logo from "../assets/icon/logo.jpg";
 import IconModalError from "../assets/icon/iconModal/iconModalError.png";
 import IconModalSuccess from "../assets/icon/iconModal/iconModalSucces.png";
 
@@ -21,31 +22,37 @@ function Register() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const registerAction = (e) => {
+  const registerAction = async (e) => {
     e.preventDefault();
     setModalMessage("");
     setErrorModal("");
     setLoading(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-    // Simulasi penyimpanan user ke localStorage
-    setTimeout(() => {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const existingUser = users.find((user) => user.email === email);
+      const user = userCredential.user;
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        firstName,
+        lastName,
+        username,
+        email,
+        createdAt: new Date(),
+      });
 
-      if (existingUser) {
-        setErrorModal("Email sudah terdaftar.");
-        setLoading(false);
-      } else {
-        const newUser = { firstName, lastName, username, email, password };
-        users.push(newUser);
-        localStorage.setItem("users", JSON.stringify(users));
-
-        setModalMessage("Berhasil melakukan registrasi");
-        setTimeout(() => {
-          navigate("/login");
-        }, 3000);
-      }
-    }, 1000);
+      setModalMessage("Berhasil Melakukan Registrasi");
+      // Alihkan ke halaman login setelah 5 detik
+      setTimeout(() => {
+        navigate("/login");
+      }, 5000);
+    } catch (error) {
+      setErrorModal("Registration failed. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -61,10 +68,14 @@ function Register() {
             <img
               src={Logo}
               alt="Logo"
-              className="w-150 h-150 sm:w-150 sm:h-150 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
+              className="w-44 h-44 sm:w-40 sm:h-40 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
+            <h2 className="relative z-50 text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary-100 mt-4">
+              PixelStore
+            </h2>
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl  text-primary-100">
-              Dunia Belanja Anda
+              PixelStore, Sumber Inspirasi footage menarik di website kami untuk
+              Project Anda!
             </p>
           </div>
         </div>
@@ -78,7 +89,8 @@ function Register() {
             </div>
             <div className="relative w-full mx-auto ">
               <h2 className=" ml-[12px] sm:ml-[90px] md:ml-[110px] lg:ml-[80px] xl:ml-[100px] sm:w-2/3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-xl text-center text-nuetral-90 mb-10">
-                Selamat Datang di Mahakam Store, Dunia Belanja Anda.
+                Ayo Selesaikan Pendaftaran dan Segera bergabung Ke Tomb Oati
+                Market
               </h2>
             </div>
 
@@ -167,8 +179,7 @@ function Register() {
                   <button
                     type="button"
                     className="absolute  inset-y-0 right-0 pr-5 flex items-center text-gray-600"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
+                    onClick={() => setShowPassword(!showPassword)}>
                     {showPassword ? (
                       <EyeSlashIcon className="h-6 w-6 text-gray-500" />
                     ) : (
@@ -185,8 +196,7 @@ function Register() {
                   className={`rounded-md w-full h-[40px] sm:h-[48px] md:h-[48px] lg:h-[48px] xl:h-[48px] 2xl:h-[48px] text-[16px] sm:text-[16px] md:text-[16px] lg:text-[18px]  xl:text-[18px] mt-4   ${
                     loading ? "bg-secondary-40 " : "bg-secondary-40  "
                   } text-primary-100`}
-                  disabled={loading}
-                >
+                  disabled={loading}>
                   {loading ? (
                     <span className="loading loading-infinity loading-lg"></span>
                   ) : (
@@ -201,8 +211,7 @@ function Register() {
               </span>
               <Link
                 className="ml-4 text-primary-30  hover:text-primary-30   text-[16px] sm:text-[16px] md:text-[16px] lg:text-[16px] xl:text-xl"
-                to="/login"
-              >
+                to="/login">
                 Login
               </Link>
             </div>
@@ -221,8 +230,7 @@ function Register() {
                 <div className="modal-action flex justify-center">
                   <button
                     onClick={() => setErrorModal(null)}
-                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100"
-                  >
+                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100">
                     OK
                   </button>
                 </div>
@@ -244,8 +252,7 @@ function Register() {
                 <div className="modal-action flex justify-center">
                   <button
                     onClick={() => setModalMessage(null)}
-                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100"
-                  >
+                    className="btn bg-secondary-40 border-secondary-40 hover:bg-secondary-50 hover:border-secondary-50 hover:font-bold mx-auto mt-4 w-[79px] text-primary-100">
                     OK
                   </button>
                 </div>

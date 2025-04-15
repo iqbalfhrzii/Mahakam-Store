@@ -1,10 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { auth, db } from "../firebase/firebaseConfig";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
 import { useUserContext } from "../contexts/UserContext";
-import BgLogin from "../assets/Background/pllr.jpg";
-import Logo from "../assets/logo/MahakamStoreLogo.png";
+import BgLogin from "../assets/Background/bgLogin3.png";
+import Logo from "../assets/icon/logo.jpg";
 import IconModalError from "../assets/icon/iconModal/iconModalError.png";
 import IconModalSuccess from "../assets/icon/iconModal/iconModalSucces.png";
 
@@ -20,7 +23,6 @@ function Login() {
   const { saveUserRole } = useUserContext();
 
   useEffect(() => {
-    // Ambil email yang diingat dari localStorage jika ada
     const storedEmail = localStorage.getItem("rememberedEmail");
     if (storedEmail) {
       setLoginEmail(storedEmail);
@@ -38,39 +40,83 @@ function Login() {
     }
   };
 
-  const loginAction = (e) => {
+  const checkUserRole = async (email) => {
+    const usersRef = collection(db, "users");
+    const q = query(usersRef, where("email", "==", email));
+    const querySnapshot = await getDocs(q);
+
+    if (!querySnapshot.empty) {
+      const userDoc = querySnapshot.docs[0];
+      return userDoc.data().role;
+    }
+    return null;
+  };
+
+  const loginAction = async (e) => {
     e.preventDefault();
     setErrorModal("");
     setLoading(true);
 
-    // Ambil data users dari localStorage
-    const users = JSON.parse(localStorage.getItem("users")) || [];
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      const user = userCredential.user;
 
-    // Cari user berdasarkan email dan password
-    const existingUser = users.find(
-      (user) => user.email === loginEmail && user.password === loginPassword
-    );
+      const response = await fetch("http://localhost:3000/api/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: loginEmail,
+          password: loginPassword,
+        }),
+      });
 
-    if (existingUser) {
-      // Simpan user ke session
-      localStorage.setItem("authUser", JSON.stringify(existingUser));
+      const data = await response.json();
 
-      if (rememberMe) {
-        localStorage.setItem("rememberedEmail", loginEmail);
+      if (response.ok) {
+        localStorage.setItem("authToken", data.token);
+        if (rememberMe) {
+          localStorage.setItem("rememberedEmail", loginEmail);
+        } else {
+          localStorage.removeItem("rememberedEmail");
+        }
+
+        const adminRole = data.user.role;
+        if (adminRole === "superadmin") {
+          setModalMessage("Login sebagai Superadmin berhasil!");
+          saveUserRole("superadmin");
+          setTimeout(() => {
+            setModalMessage(null);
+            navigate("/dashboard");
+          }, 2000);
+        } else if (adminRole === "admin") {
+          setModalMessage("Login sebagai Admin berhasil!");
+          saveUserRole("admin");
+          setTimeout(() => {
+            setModalMessage(null);
+            navigate("/dashboard");
+          }, 2000);
+        } else {
+          setModalMessage("Login berhasil!");
+          saveUserRole("user");
+          setTimeout(() => {
+            setModalMessage(null);
+            navigate("/");
+          }, 2000);
+        }
       } else {
-        localStorage.removeItem("rememberedEmail");
+        setErrorModal(data.error || "Login gagal. Silakan coba lagi.");
       }
-
-      setModalMessage("Login berhasil!");
-      setTimeout(() => {
-        setModalMessage(null);
-        navigate("/");
-      }, 2000);
-    } else {
+    } catch (error) {
       setErrorModal("Email atau password tidak valid. Silakan coba lagi.");
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -86,11 +132,14 @@ function Login() {
             <img
               src={Logo}
               alt="Logo"
-              className="w-150 h-150 sm:w-150 sm:h-150 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
+              className="w-44 h-44 sm:w-40 sm:h-40 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
-
+            <h2 className="relative z-50 text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary-100 mt-4">
+              PixelStore
+            </h2>
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl  text-primary-100">
-              Dunia Belanja Anda
+              PixelStore, Sumber Inspirasi footage menarik di website kami untuk
+              Project Anda!
             </p>
           </div>
         </div>
@@ -104,7 +153,8 @@ function Login() {
                 </h1>
               </div>
               <h2 className=" ml-[12px] sm:ml-[100px] md:ml-[130px] lg:ml-[80px] xl:ml-[100px] sm:w-2/3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-xl text-center text-neutral-90 mb-10">
-                Selamat Datang di Mahakam Store, Dunia Belanja Anda.
+                Selamat Datang di PixelStore, Surga Kreatif untuk Asset
+                Berkualitas!
               </h2>
             </div>
 
