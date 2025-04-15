@@ -56,13 +56,13 @@ function JualAsset() {
 
             <div className="mb-16">
               <p className="mb-4">
-                2. Kemudian pada halaman Landing Page, klik Jual Asset dan pilih
-                menu Mulai Jual Asset seperti gambar dibawah.
+                2. Kemudian pada halaman Landing Page, klik Jual Barang dan pilih
+                menu Mulai Jual Barang seperti gambar dibawah.
               </p>
               <Zoom>
                 <img
                   src={HomeJualAset}
-                  alt="Jual Asset"
+                  alt="Jual Barang"
                   className="w-full max-w-lg mx-auto"
                 />
               </Zoom>
@@ -76,7 +76,7 @@ function JualAsset() {
               <Zoom>
                 <img
                   src={Dashboard}
-                  alt="Halaman Asset Market"
+                  alt="Halaman Mahakam Store"
                   className="w-full max-w-lg mx-auto"
                 />
               </Zoom>

@@ -21,7 +21,7 @@ export default {
         "2xl": "1920px",
       },
 
-      // Color Guidance Asset Market
+      // Color Guidance Mahakam Store
       colors: {
         primary: {
           0: "#000000",

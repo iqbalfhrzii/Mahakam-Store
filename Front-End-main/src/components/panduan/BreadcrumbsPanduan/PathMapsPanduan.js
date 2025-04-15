@@ -3,7 +3,7 @@ export const nameMap = {
 	"/panduan-login": "Login",
 	"/panduan": "Panduan",
 	"/panduan-lupa-password": "Lupa Password",
-	"/panduan-jual-asset": "Jual Asset",
+	"/panduan-jual-asset": "Jual Barang",
 	"/panduan-edit-asset": "Edit Asset",
 	"*": "Error Page 404",
         };

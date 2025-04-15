@@ -1,4 +1,4 @@
-import logoWeb from "../../../assets/logo/logoWeb.png";
+import MahakamStoreLogo from "../../../assets/logo/MahakamStoreLogo.png";
 import { FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -10,14 +10,13 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <img
-              src={logoWeb}
+              src={MahakamStoreLogo}
               alt="PixelStore Logo"
               className="w-24 h-24 md:w-32 md:h-32 mb-4 transition-transform duration-300 hover:scale-110"
               loading="lazy"
             />
             <p className="text-gray-500 text-sm dark:text-primary-100">
-              Temukan, Bagikan, dan Berinovasi dengan Aset digital yang terbaik
-              Anda.
+            Temukan Kebutuhan Anda dengan Mudah, Belanja Nyaman dan Aman, Harga Terjangkau serta Pengiriman Cepat.
             </p>
           </div>
 
@@ -42,14 +41,14 @@ const Footer = () => {
           {/* Navigation Links */}
           <nav className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-primary-100 mb-3">
-              Asset Navigation
+              Produk Kami
             </h3>
             {[
-              { href: "/asset-video", text: "Asset Video" },
-              { href: "/asset-image", text: "Asset Image" },
-              { href: "/asset-dataset", text: "Asset Dataset" },
-              { href: "/asset-game", text: "Asset Game" },
-              { href: "/asset-gratis", text: "Asset Gratis" },
+              { href: "/asset-video", text: "Fashion" },
+              { href: "/asset-image", text: "Elektronik" },
+              { href: "/asset-dataset", text: "Kesehatan" },
+              { href: "/asset-game", text: "Furniture" },
+              { href: "/asset-gratis", text: "Pendidikan" },
             ].map((link) => (
               <a
                 key={link.href}
@@ -65,10 +64,9 @@ const Footer = () => {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-300 mt-4">
           <span className="text-gray-600 text-sm dark:text-primary-100">
-            © 2024 PixelStore. All rights reserved.
+            © 2025 Mahakam Store. All rights reserved.
           </span>
           <span className="text-gray-600 text-sm dark:text-primary-100 mt-4 md:mt-0">
-            Designed with ❤️ by Pixel Team
           </span>
         </div>
       </div>

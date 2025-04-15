@@ -26,7 +26,7 @@ import IconDollarLight from "../../assets/icon/iconSidebar/iconDollarLight.svg";
 import IconDollarDark from "../../assets/icon/iconSidebar/iconDollarDark.svg";
 import IconRevenueLight from "../../assets/icon/iconSidebar/iconRevenueLight.svg";
 import IconRevenueDark from "../../assets/icon/iconSidebar/iconRevenueDark.svg";
-import Logo from "../../assets/logo/logoWeb.png";
+import Logo from "../../assets/logo/MahakamStoreLogo.png";
 
 const Sidebar = () => {
   const navigate = useNavigate();

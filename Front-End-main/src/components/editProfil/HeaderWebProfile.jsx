@@ -12,7 +12,7 @@ import IconLogoutDark from "../../assets/icon/iconDarkMode&LigthMode/logOutDark.
 import IconLogoutLight from "../../assets/icon/iconDarkMode&LigthMode/logOutLight.svg";
 import IconCart from "../../assets/icon/iconHeader/iconCart.svg";
 import IconMyAsset from "../../assets/icon/iconHeader/iconMyasset.svg";
-import logoWeb from "../../assets/logo/logoWeb.png";
+import logoWeb from "../../assets/logo/MahakamStoreLogo.png";
 
 function HeaderWebUser() {
   const { darkMode, toggleDarkMode } = useTheme();
@@ -90,8 +90,8 @@ function HeaderWebUser() {
             alt="logo"
             className="w-20 lg:w-20 xl:w-20 2xl:w-20 h-20"
           />
-          <h2 className="text-[10px] hidden sm:hidden md:block sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
-            PixelStore
+          <h2 className="text-[5px] hidden sm:hidden md:block sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
+            MahakamStore
           </h2>
         </div>
 
