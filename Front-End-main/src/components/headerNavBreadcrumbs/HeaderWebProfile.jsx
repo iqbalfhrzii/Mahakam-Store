@@ -69,15 +69,15 @@ function HeaderWebUser() {
   };
 
   const getPhotoURLFromToken = () => {
-    const token = localStorage.getItem("authToken");  
-    if (!token) return null;  
-  
+    const token = localStorage.getItem("authToken");
+    if (!token) return null;
+
     try {
-      const payload = JSON.parse(atob(token.split('.')[1]));  
-      return payload.image || payload.profileImageUrl || null; 
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      return payload.image || payload.profileImageUrl || null;
     } catch (error) {
       console.error("Error decoding token:", error);
-      return null;  
+      return null;
     }
   };
 
@@ -90,7 +90,7 @@ function HeaderWebUser() {
             alt="logo"
             className="w-20 lg:w-20 xl:w-20 2xl:w-20 h-20"
           />
-          <h2 className="text-[4px] hidden sm:hidden md:block sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
+          <h2 className="text-[10px] hidden sm:hidden md:block sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
             MahakamStore
           </h2>
         </div>
@@ -100,7 +100,8 @@ function HeaderWebUser() {
           <div className="gap-14 sm:gap-1 md:gap-8 lg:gap-8 xl:gap-2 2xl:gap-10 flex justify-center items-center">
             <Link
               to="/my-asset"
-              className="w-[45px] sm:w-[45px] md:w-[44px] lg:w-[44px] xl:w-[60px] 2xl:w-[34px] h-[20px] sm:h-[28px] md:h-[28px] lg:h-[28px] xl:h-[28px] 2xl:h[28px] -ml-[30px] sm:ml-1 md:ml-1 lg:ml-0 xl:ml-0 2xl:ml-2 gap-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]">
+              className="w-[45px] sm:w-[45px] md:w-[44px] lg:w-[44px] xl:w-[60px] 2xl:w-[34px] h-[20px] sm:h-[28px] md:h-[28px] lg:h-[28px] xl:h-[28px] 2xl:h[28px] -ml-[30px] sm:ml-1 md:ml-1 lg:ml-0 xl:ml-0 2xl:ml-2 gap-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]"
+            >
               <img
                 src={IconMyAsset}
                 alt="icon my asset"
@@ -111,7 +112,8 @@ function HeaderWebUser() {
 
             <Link
               to="/cart"
-              className="relative w-[20px] sm:w-[45px] md:w-[28px] lg:w-[28px] xl:w-[28px] 2xl:w-[28px] h-[20px] sm:h-[28px] md:h-[28px] lg:h-[28px] xl:h-[28px] 2xl:h[28px] -ml-[30px] sm:ml-1 md:ml-1 lg:ml-0 xl:ml-0 2xl:ml-2 gap-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]">
+              className="relative w-[20px] sm:w-[45px] md:w-[28px] lg:w-[28px] xl:w-[28px] 2xl:w-[28px] h-[20px] sm:h-[28px] md:h-[28px] lg:h-[28px] xl:h-[28px] 2xl:h[28px] -ml-[30px] sm:ml-1 md:ml-1 lg:ml-0 xl:ml-0 2xl:ml-2 gap-2 text-[8px] sm:text-[10px] md:text-[10px] lg:text-[10px] xl:text-[10px] 2xl:text-[10px]"
+            >
               <img
                 src={IconCart}
                 alt="icon cart"
@@ -154,7 +156,8 @@ function HeaderWebUser() {
                               <div className="flex items-center justify-center p-2 bg-neutral-90 hover:border-none dark:bg-neutral-20   rounded-lg hover:text-primary-100 hover:bg-secondary-40 dark:hover:bg-secondary-40 ">
                                 <div
                                   onClick={toggleDarkMode}
-                                  className="flex w-full h-8 transition-colors duration-100 focus:outline-none gap-4 p-1  ">
+                                  className="flex w-full h-8 transition-colors duration-100 focus:outline-none gap-4 p-1  "
+                                >
                                   {darkMode ? (
                                     <img
                                       src={IconDarkMode}
@@ -173,7 +176,8 @@ function HeaderWebUser() {
                                       darkMode
                                         ? "text-neutral-100"
                                         : "text-neutral-800"
-                                    }`}>
+                                    }`}
+                                  >
                                     {darkMode ? "Light Mode" : "Dark Mode"}
                                   </span>
                                 </div>
@@ -182,7 +186,8 @@ function HeaderWebUser() {
                             <li className="flex mb-1 w-full h-8 transition-colors duration-300 focus:outline-none">
                               <div
                                 className="flex items-center hover:text-primary-100 hover:bg-secondary-40 dark:hover:bg-secondary-40"
-                                onClick={handleLogout}>
+                                onClick={handleLogout}
+                              >
                                 <img
                                   src={
                                     darkMode ? IconLogoutDark : IconLogoutLight
@@ -203,13 +208,20 @@ function HeaderWebUser() {
                     role="button"
                     id="dropdownDefaultButton"
                     data-dropdown-toggle="dropdown"
-                    className="btn btn-ghost btn-circle avatar mx-2 w-14 h-14 rounded-full -ml-3">
-                      <div className="w-14 h-14 p-3 rounded-full overflow-hidden bg-neutral-80 flex items-center justify-center text-secondary-40 font-bold text-2xl mx-auto ">
+                    className="btn btn-ghost btn-circle avatar mx-2 w-14 h-14 rounded-full -ml-3"
+                  >
+                    <div className="w-14 h-14 p-3 rounded-full overflow-hidden bg-neutral-80 flex items-center justify-center text-secondary-40 font-bold text-2xl mx-auto ">
                       {user ? (
-                        user.image || user.profileImageUrl || getPhotoURLFromToken() ? ( 
+                        user.image ||
+                        user.profileImageUrl ||
+                        getPhotoURLFromToken() ? (
                           <img
                             alt="Avatar"
-                            src={user.image || user.profileImageUrl || getPhotoURLFromToken()} 
+                            src={
+                              user.image ||
+                              user.profileImageUrl ||
+                              getPhotoURLFromToken()
+                            }
                             className="w-full h-full object-cover rounded-full"
                           />
                         ) : (
@@ -236,14 +248,16 @@ function HeaderWebUser() {
                       <div
                         tabIndex={0}
                         role="button"
-                        className="btn m-1 bg-primary-100 hover:bg-primary-100 ">
+                        className="btn m-1 bg-primary-100 hover:bg-primary-100 "
+                      >
                         <p className="text-center mx-auto mt-1 text-neutral-10">
                           Hello, Sign in
                         </p>
                       </div>
                       <ul
                         tabIndex={0}
-                        className="dropdown-content menu bg-primary-100 rounded-box z-[1] w-52 p-2 shadow ">
+                        className="dropdown-content menu bg-primary-100 rounded-box z-[1] w-52 p-2 shadow "
+                      >
                         <li>
                           <Link to="/login">Login</Link>
                         </li>
