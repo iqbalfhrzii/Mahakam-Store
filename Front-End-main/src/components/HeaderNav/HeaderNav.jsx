@@ -68,17 +68,16 @@ function HeaderNav() {
     }
   };
 
-  
   const getPhotoURLFromToken = () => {
-    const token = localStorage.getItem("authToken");  
-    if (!token) return null;  
-  
+    const token = localStorage.getItem("authToken");
+    if (!token) return null;
+
     try {
-      const payload = JSON.parse(atob(token.split('.')[1]));  
-      return payload.image || payload.profileImageUrl || null; 
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      return payload.image || payload.profileImageUrl || null;
     } catch (error) {
       console.error("Error decoding token:", error);
-      return null;  
+      return null;
     }
   };
 
@@ -88,7 +87,7 @@ function HeaderNav() {
         <div className="flex-1 gap-2 w-full">
           <img src={logoWeb} alt="logo" className="w-20 h-20" />
           <h2 className="text-[10px] sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-2xl">
-            MahakamStore
+            PixelStore
           </h2>
         </div>
 
@@ -118,7 +117,8 @@ function HeaderNav() {
                             <div className="flex items-center justify-center p-2 bg-neutral-90 hover:rounded-lg dark:bg-neutral-20 transition-all duration-300 rounded-lg ">
                               <div
                                 onClick={toggleDarkMode}
-                                className="flex w-full h-8 transition-colors duration-300 hover:bg-secondary-40 hover:text-primary-100 focus:outline-none gap-4 p-1 ">
+                                className="flex w-full h-8 transition-colors duration-300 hover:bg-secondary-40 hover:text-primary-100 focus:outline-none gap-4 p-1 "
+                              >
                                 {darkMode ? (
                                   <img
                                     src={IconDarkMode}
@@ -137,7 +137,8 @@ function HeaderNav() {
                                     darkMode
                                       ? "text-neutral-100"
                                       : "text-neutral-800"
-                                  }`}>
+                                  }`}
+                                >
                                   {darkMode ? "Light Mode" : "Dark Mode"}
                                 </span>
                               </div>
@@ -146,7 +147,8 @@ function HeaderNav() {
                           <li className="flex mb-1 w-full h-8 transition-colors duration-300 hover:bg-secondary-40 hover:text-primary-100 focus:outline-none">
                             <div
                               className="flex items-center"
-                              onClick={handleLogout}>
+                              onClick={handleLogout}
+                            >
                               <img
                                 src={
                                   darkMode ? IconLogoutDark : IconLogoutLight
@@ -165,28 +167,35 @@ function HeaderNav() {
                 <div
                   tabIndex={0}
                   role="button"
-                  className="btn btn-ghost btn-circle avatar mx-2 w-14 h-14 rounded-full -ml-3">
-                 <div className="w-14 h-14 p-3 rounded-full overflow-hidden bg-neutral-80 flex items-center justify-center text-secondary-40 font-bold text-2xl mx-auto ">
-                      {user ? (
-                        user.image || user.profileImageUrl || getPhotoURLFromToken() ? ( 
-                          <img
-                            alt="Avatar"
-                            src={user.image || user.profileImageUrl || getPhotoURLFromToken()} 
-                            className="w-full h-full object-cover rounded-full"
-                          />
-                        ) : (
-                          <span className="text-[22px] text-center mx-auto -ml-1">
-                            {getInitial(username)}
-                          </span>
-                        )
-                      ) : (
+                  className="btn btn-ghost btn-circle avatar mx-2 w-14 h-14 rounded-full -ml-3"
+                >
+                  <div className="w-14 h-14 p-3 rounded-full overflow-hidden bg-neutral-80 flex items-center justify-center text-secondary-40 font-bold text-2xl mx-auto ">
+                    {user ? (
+                      user.image ||
+                      user.profileImageUrl ||
+                      getPhotoURLFromToken() ? (
                         <img
-                          alt="Default User Icon"
-                          src="/path/to/default-user-icon.svg"
-                          className="w-10 h-10"
+                          alt="Avatar"
+                          src={
+                            user.image ||
+                            user.profileImageUrl ||
+                            getPhotoURLFromToken()
+                          }
+                          className="w-full h-full object-cover rounded-full"
                         />
-                      )}
-                    </div>
+                      ) : (
+                        <span className="text-[22px] text-center mx-auto -ml-1">
+                          {getInitial(username)}
+                        </span>
+                      )
+                    ) : (
+                      <img
+                        alt="Default User Icon"
+                        src="/path/to/default-user-icon.svg"
+                        className="w-10 h-10"
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
