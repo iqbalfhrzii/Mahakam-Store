@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
-
+import { auth, db } from "../firebase/firebaseConfig";
+import { addDoc, collection } from "firebase/firestore";
 import BgLogin from "../assets/Background/pllr.jpg";
 import Logo from "../assets/logo/MahakamStoreLogo.png";
 import IconModalError from "../assets/icon/iconModal/iconModalError.png";
@@ -21,31 +22,37 @@ function Register() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const registerAction = (e) => {
+  const registerAction = async (e) => {
     e.preventDefault();
     setModalMessage("");
     setErrorModal("");
     setLoading(true);
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
 
-    // Simulasi penyimpanan user ke localStorage
-    setTimeout(() => {
-      const users = JSON.parse(localStorage.getItem("users")) || [];
-      const existingUser = users.find((user) => user.email === email);
+      const user = userCredential.user;
+      await addDoc(collection(db, "users"), {
+        uid: user.uid,
+        firstName,
+        lastName,
+        username,
+        email,
+        createdAt: new Date(),
+      });
 
-      if (existingUser) {
-        setErrorModal("Email sudah terdaftar.");
-        setLoading(false);
-      } else {
-        const newUser = { firstName, lastName, username, email, password };
-        users.push(newUser);
-        localStorage.setItem("users", JSON.stringify(users));
-
-        setModalMessage("Berhasil melakukan registrasi");
-        setTimeout(() => {
-          navigate("/login");
-        }, 3000);
-      }
-    }, 1000);
+      setModalMessage("Berhasil Melakukan Registrasi");
+      // Alihkan ke halaman login setelah 5 detik
+      setTimeout(() => {
+        navigate("/login");
+      }, 5000);
+    } catch (error) {
+      setErrorModal("Registration failed. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -61,10 +68,13 @@ function Register() {
             <img
               src={Logo}
               alt="Logo"
-              className="w-150 h-150 sm:w-150 sm:h-150 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
+              className="w-60 h-60 sm:w-100 sm:h-100 z-50 rounded-t-full mx-auto mt-6 sm:mt-5"
             />
+            <h2 className="relative z-50 text-1xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-primary-100 mt-4">
+              Mahakam Store
+            </h2>
             <p className="text-center relative z-50 py-2 sm:py-4 lg:py-6 text-[10px] sm:text-[12px] md:text-[14px] lg:text-xl  text-primary-100">
-              Dunia Belanja Anda
+              Dunia Belanja Anda!
             </p>
           </div>
         </div>
@@ -78,7 +88,8 @@ function Register() {
             </div>
             <div className="relative w-full mx-auto ">
               <h2 className=" ml-[12px] sm:ml-[90px] md:ml-[110px] lg:ml-[80px] xl:ml-[100px] sm:w-2/3 text-[12px] sm:text-[14px] md:text-[16px] lg:text-xl text-center text-nuetral-90 mb-10">
-                Selamat Datang di Mahakam Store, Dunia Belanja Anda.
+                Ayo Selesaikan Pendaftaran dan Segera bergabung Ke Mahakam
+                Store.
               </h2>
             </div>
 
